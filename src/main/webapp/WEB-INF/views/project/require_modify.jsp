@@ -176,7 +176,7 @@ body {
          </div>
       </div>
    
-   
+   <form role="regist_form" enctype="multipart/form-data">
          <div class="card-body">
                   <table style="width:100%;">
                   
@@ -184,7 +184,7 @@ body {
                      <tr class="w-full">
                         <td style="width:250px; font-weight:bold; display:flex; width:100%; margin-top:10px; white-space: nowrap;">
                         <div class="flex items-center">제&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</div>
-                           <input style="height:48px; border:1px solid #aaa; width:100%;; margin-left:29px; border-radius:0px;" name="title" type="text"  value="${require.REQUIRE_TITLE}" placeholder="제목을 입력하세요." class="input input-bordered p-reg-input w-full flex"  />
+                           <input style="height:48px; border:1px solid #aaa; width:100%;; margin-left:29px; border-radius:0px;" name="REQUIRE_TITLE" type="text"  value="${require.REQUIRE_TITLE}" placeholder="제목을 입력하세요." class="input input-bordered p-reg-input w-full flex"  />
                         </td>
                      </tr>
                   
@@ -206,7 +206,7 @@ body {
                              <option value="4" style="color:#FFD700;">&#xf005;&#xf005;</option>
                              <option value="5" style="color:#FFD700;">&#xf005;</option>
                            </select> -->
-                           <select class="select" style="border-radius:0px; margin-left: 1.53rem; border:1px solid #aaa" name="level">
+                           <select class="select" style="border-radius:0px; margin-left: 1.53rem; border:1px solid #aaa" name="REQUIRE_LEVEL">
                              <option value="${require.REQUIRE_LEVEL }" selected>선택</option>
                              <option value="1" ${require.REQUIRE_LEVEL eq '1' ? 'selected' : "" } style="color:#FFD700;">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</option>
                              <option value="2" ${require.REQUIRE_LEVEL eq '2' ? 'selected' : "" } style="color:#FFD700;">&#xf005;&#xf005;&#xf005;&#xf005;</option>
@@ -223,7 +223,7 @@ body {
                <tr>
                   <td class="flex font-bold" >
                       내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용&nbsp;
-                     <textarea class="textarea " name="detail" id="content" class="form-control" style="height:150px; width:100%; margin-left: 1.5rem; resize:none; border:1px solid #aaa; border-radius:0px;">${require.REQUIRE_DETAIL }</textarea>
+                     <textarea class="textarea " name="REQUIRE_DETAIL" id="content" class="form-control" style="height:150px; width:100%; margin-left: 1.5rem; resize:none; border:1px solid #aaa; border-radius:0px;">${require.REQUIRE_DETAIL }</textarea>
                   </td>
                </tr>
                         <!-- <td>내&nbsp;&nbsp;&nbsp;용</td>
@@ -246,17 +246,18 @@ body {
                      <td style="width:200px; font-weight:bold;">
                      <div class="filebox bs3-primary w-full font-bold flex align-center" style="margin:0 0; margin-top:10px;">
                      <span class="flex items-center"style="white-space:nowrap">파일첨부</span>
-                        <input class="upload-name" value="${require.REQUIRE_TITLE }.xlsx" disabled="disabled" style="color:#aaa; width:100%; float:right; margin-left:26px;">
+                        <input class="upload-name" value="${require.require_attach.RQAT_FILENAME}" disabled="disabled" style="color:#aaa; width:100%; float:right; margin-left:26px;">
                            <label for="ex_filename">
                               <i class="fa-sharp fa-solid fa-paperclip text-2xl text-black mr-3 " ></i>                       
                            </label>
-                        <input type="file" id="ex_filename" class="upload-hidden">
+                        <input type="file" id="ex_filename" class="upload-hidden" name="uploadfile">
                      </div>
                   </td>
                </tr>
                      
                   </table>
                </div>
+               </form>
  
       <div style="display:flex; justify-content:center; margin-top:-10px;">
          <button class="btn btn-se" onclick="modify_go('${require.REQUIRE_NUM}');"style="font-size: 20px; width: 100px; height: 40px; border-radius: 8px; margin-right: 10px;">수 정</button>
@@ -269,7 +270,7 @@ body {
    <script>
 
    function modify_go(REQUIRE_NUM){
-      var title = $("input[name=title]").val();
+     /*  var title = $("input[name=title]").val();
       var level = $("select[name=level]").val();
       var detail = $("textarea[name=detail]").val();
 
@@ -280,12 +281,19 @@ body {
             "REQUIRE_LEVEL":level,
             "REQUIRE_DETAIL":detail,
             "REQUIRE_NUM":REQUIRE_NUM
-      }
+      } */
+      var form = $("form[role='regist_form']")[0];
+      
+      var formData = new FormData(form);
+       
+       console.log(formData);
       
       $.ajax({
          url:"<%=request.getContextPath()%>/project/dorequire_modify",
-         type:"post",
-         data:data,
+         type : "post",
+	     data : formData,
+		 processData : false,
+		 contentType : false,
          success:function(){
             alert("수정이 완료되었습니다.");
             window.close();

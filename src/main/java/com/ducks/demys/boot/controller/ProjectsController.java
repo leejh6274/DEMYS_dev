@@ -559,12 +559,15 @@ public class ProjectsController {
 
 	@ResponseBody
 	@PostMapping("project/dorequire_modify")
-	public void showrequire_modify(String REQUIRE_TITLE, int REQUIRE_LEVEL, String REQUIRE_DETAIL, int REQUIRE_NUM) {
+	public void showrequire_modify(String REQUIRE_TITLE, int REQUIRE_LEVEL, String REQUIRE_DETAIL, int REQUIRE_NUM, MultipartFile uploadfile) throws Exception {
 		Require require = requireService.getRequireByREQUIRE_NUM(REQUIRE_NUM);
+		String savePath = this.fileUploadPath;
+		Require_Attach require_attach = saveFileToRequire(uploadfile, savePath);
 
 		require.setREQUIRE_TITLE(REQUIRE_TITLE);
 		require.setREQUIRE_LEVEL(REQUIRE_LEVEL);
 		require.setREQUIRE_DETAIL(REQUIRE_DETAIL);
+		require.setRequire_attach(require_attach);
 
 		requireService.modifyRequire(require);
 	}

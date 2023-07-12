@@ -367,7 +367,7 @@
 														<c:if test="${issue.ISSUE_IMP == '3' }">
 																<div class="card card-side" style="width: 90%; height: 30%; margin: 5px;">
 																		<div class="card-body card-shadow shadow-md bg-base-100"
-																				style="width: 97%; height: 95%; margin: 0; border-radius: 15px; cursor:pointer;"
+																				style="width: 265px; height: 165px; margin: 0; border-radius: 15px; cursor:pointer;"
 																				onclick="window.open('issue_detail?ISSUE_NUM=${issue.ISSUE_NUM}','이슈 상세','width=1150px,height=730px,left=500px,top=150px');">
 																				<div class="card-title flex" style="margin: 0;">
 																						<div class="flex items-center" style="margin: 0; width: 100%;">
@@ -402,7 +402,7 @@
 
 																								<c:if test="${issue.ISSUE_STATUS == '1'}">
 																										<div class="badge badge-success gap-2"
-																												style="font-size: 12px; margin: 0; background-color: blue;">진행중</div>
+																												style="font-size: 12px; margin: 0; background-color: blue; color:white;">진행중</div>
 																								</c:if>
 																								<c:if test="${issue.ISSUE_STATUS == '2'}">
 																										<div class="badge badge-success gap-2" style="font-size: 12px; margin: 0;">완료</div>
@@ -435,7 +435,7 @@
 														<c:if test="${issue.ISSUE_IMP == '2' }">
 																<div class="card card-side" style="width: 90%; height: 30%; margin: 5px;">
 																		<div class="card-body card-shadow shadow-md bg-base-100 "
-																				style="width: 97%; height: 95%; margin: 0; border-radius: 15px; cursor:pointer;"
+																				style="width: 265px; height: 165px; margin: 0; border-radius: 15px; cursor:pointer;"
 																				onclick="window.open('issue_detail?ISSUE_NUM=${issue.ISSUE_NUM}','이슈 상세','width=1150px,height=730px,left=500px,top=150px');">
 																				<div class="card-title flex" style="margin: 0;">
 																						<div class="flex items-center" style="margin: 0; width: 100%;">
@@ -479,7 +479,7 @@
 
 																								<c:if test="${issue.ISSUE_STATUS == '1'}">
 																										<div class="badge badge-success gap-2"
-																												style="font-size: 12px; margin: 0; background-color: blue;">진행중</div>
+																												style="font-size: 12px; margin: 0; background-color: blue; color:white;">진행중</div>
 																								</c:if>
 																								<c:if test="${issue.ISSUE_STATUS == '2'}">
 																										<div class="badge badge-success gap-2" style="font-size: 12px; margin: 0;">완료</div>
@@ -509,7 +509,7 @@
 														<c:if test="${issue.ISSUE_IMP == '1' }">
 																<div class="card card-side" style="width: 90%; height: 30%; margin: 5px;">
 																		<div class="card-body card-shadow shadow-md bg-base-100"
-																				style="width: 97%; height: 95%; margin: 0; border-radius: 15px; cursor:pointer;"
+																				style="width: 265px; height: 165px; margin: 0; border-radius: 15px; cursor:pointer;"
 																				onclick="window.open('issue_detail?ISSUE_NUM=${issue.ISSUE_NUM}','이슈 상세','width=1150px,height=730px,left=500px,top=150px');">
 																				<div class="card-title flex" style="margin: 0;">
 																						<div class="flex items-center" style="margin: 0; width: 100%;">
@@ -552,7 +552,7 @@
                                     </c:if> --%>
 																								<c:if test="${issue.ISSUE_STATUS == '1'}">
 																										<div class="badge badge-success gap-2"
-																												style="font-size: 12px; margin: 0; background-color: blue;">진행중</div>
+																												style="font-size: 12px; margin: 0; background-color: blue; color:white;">진행중</div>
 																								</c:if>
 																								<c:if test="${issue.ISSUE_STATUS == '2'}">
 																										<div class="badge badge-success gap-2" style="font-size: 12px; margin: 0;">완료</div>
@@ -628,7 +628,7 @@
 												<div class="filebox bs3-primary w-full" style="margin: 0 0">
 														<input class="upload-name" value="첨부파일을 등록하세요" disabled="disabled" style="color: #aaa;">
 														<label for="ex_filename">
-																<i class="fa-solid fa-paperclip fa-flip-vertical text-2xl text-black mr-3 "></i>
+																<i class="fa-solid fa-paperclip text-2xl text-black mr-3 "></i>
 														</label>
 														<input type="file" id="ex_filename" class="upload-hidden" name="uploadfile">
 												</div>
@@ -644,7 +644,7 @@
 
 										<div style="display: flex; justify-content: center;">
 												<button class="btn btn-se" onclick="regist_go();"
-														style="font-size: 20px; width: 100px; height: 40px; border-radius: 8px; margin-right: 10px;">저 장</button>
+														style="font-size: 20px; width: 100px; height: 40px; border-radius: 8px; margin-right: 10px;">등 록</button>
 												<button class="btn btn-se" id="modal_close_btn"
 														style="font-size: 20px; width: 100px; height: 40px; border-radius: 8px;">취 소</button>
 										</div>

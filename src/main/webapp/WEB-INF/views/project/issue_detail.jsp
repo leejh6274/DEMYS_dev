@@ -177,7 +177,7 @@ body {
                   		&nbsp;&nbsp;${issue.issue_attach.ISSUEAT_FILENAME.split("\\$\\$")[1]}
                   	 </span>
                      <span>
-                        <i class="fa-sharp fa-solid fa-paperclip fa-flip-vertical text-2xl text-black mr-3 " ></i>
+                        <i class="fa-sharp fa-solid fa-paperclip text-2xl text-black mr-3 " ></i>
                      </span>
                   </div>
                   <div class="flex items-center" style="width:650px; height:49px; border:1px solid #aaaaaa; justify-content:space-between;">&nbsp;&nbsp;
@@ -233,7 +233,7 @@ body {
                      									</div>
                     									 <div class="flex flex-row">
                         									<button class="btn btn-se" style="font-size: 12px; width: 40px; height: 150px; border-radius: 0 3px 3px 0; margin-right: 10px; padding:0;" onclick="replyModify_go();">등 록</button>
-                     									</div>
+                     									 </div>
                   									</div> 
 												</div>
 							    			</div>

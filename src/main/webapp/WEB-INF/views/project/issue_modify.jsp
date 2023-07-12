@@ -384,7 +384,7 @@
 						<div class="filebox bs3-primary w-full" style="margin: 0 0">
 								<input class="upload-name" value="MTQ 리스트 출력 화면 이슈_20230601.zip" disabled="disabled" style="color: #aaa;">
 								<label for="ex_filename">
-										<i class="fa-solid fa-paperclip fa-flip-vertical text-2xl text-black mr-3 "></i>
+										<i class="fa-solid fa-paperclip text-2xl text-black mr-3 "></i>
 								</label>
 								<input type="file" id="ex_filename" class="upload-hidden">
 						</div>
